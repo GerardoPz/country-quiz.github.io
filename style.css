@@ -6,7 +6,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url(/src/bg.jpg);
+  background-image: url(bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* Esto asegura que la imagen no se desplace con el contenido de la página */
