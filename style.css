@@ -49,12 +49,15 @@ h4 {
   font-family: "Outfit", sans-serif;
   font-weight: 50;
   font-size: 14px;
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   /* background: linear-gradient(#e65895, #bc6be8); */
   background: #393f6e;
   color: white;
@@ -179,4 +182,10 @@ h4 {
 
 .play-again button:hover {
   cursor: pointer;
+}
+
+.answer-div {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }

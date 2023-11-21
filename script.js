@@ -34,7 +34,7 @@ fetch("https://restcountries.com/v3.1/all")
       const answerElement = document.createElement("div");
 
       // Asigna las clases y el id correspondiente a cada respuesta
-      answerElement.className = `answer ${index + 1}`;
+      answerElement.className = `answer`;
       answerElement.id = `${index + 1}`;
 
       // Asigna el texto de la respuesta al elemento
@@ -42,6 +42,53 @@ fetch("https://restcountries.com/v3.1/all")
 
       // Agrega el elemento al contenedor de respuestas
       answersContainer.appendChild(answerElement);
+
+      // Agrega el evento de escucha al clic en la respuesta
+      answerElement.addEventListener("click", () => {
+        // Realiza la acción deseada cuando el usuario seleccione una respuesta
+        if (answer === answers[correctAnswerIndex]) {
+          console.log("Respuesta correcta");
+          // Agrega el div de respuesta
+          const answerDiv = document.createElement("div");
+          answerDiv.className = "answer-div";
+
+          // Agrega el texto de la respuesta al div
+          const answerText = document.createElement("span");
+          answerText.textContent = answer;
+          answerDiv.appendChild(answerText);
+
+          // Agrega el SVG de respuesta correcta al div
+          const svgCorrect = document.createElement("img");
+          svgCorrect.src = "./src/Check_round_fill.svg";
+          svgCorrect.className = "correct-svg";
+          answerDiv.appendChild(svgCorrect);
+
+          // Reemplaza el contenido del elemento respuesta con el div
+          answerElement.innerHTML = "";
+          answerElement.appendChild(answerDiv);
+        } else {
+          console.log("Respuesta incorrecta");
+          // Agrega el div de respuesta
+          const answerDiv = document.createElement("div");
+          answerDiv.className = "answer-div";
+
+          // Agrega el texto de la respuesta al div
+          const answerText = document.createElement("span");
+          answerText.textContent = answer;
+          answerDiv.appendChild(answerText);
+
+          // Agrega el SVG de respuesta correcta al div
+          const svgCorrect = document.createElement("img");
+          svgCorrect.src = "./src/Close_round_fill.svg";
+          svgCorrect.className = "correct-svg";
+          answerDiv.appendChild(svgCorrect);
+
+          // Reemplaza el contenido del elemento respuesta con el div
+          answerElement.innerHTML = "";
+          answerElement.appendChild(answerDiv);
+        }
+        console.log(`El usuario seleccionó la respuesta ${answer}`);
+      });
     });
     console.log(`La respuesta correcta es: ${answers[correctAnswerIndex]}`);
   })
